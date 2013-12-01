@@ -1,0 +1,22 @@
+VAR a, b, x, y, r, s, t;
+BEGIN
+	? a;
+	? b;
+	x := a;
+	y := b;
+	r := -1;
+	IF x >= 1 THEN BEGIN
+		IF y >= 1 THEN BEGIN
+			WHILE x # y DO BEGIN
+				s := x;
+				t := y;
+				IF x < y THEN s := s + a;
+				IF x >= y THEN t := t + b;
+				x := s;
+				y := t;
+			END;
+			r := x;
+		END;
+	END;
+	! r;
+END.

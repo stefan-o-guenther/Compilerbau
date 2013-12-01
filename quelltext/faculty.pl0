@@ -1,0 +1,29 @@
+VAR f, n, i;
+
+PROCEDURE fac;
+VAR x;
+BEGIN
+	x := n;
+	IF n > 0 THEN 
+		BEGIN
+			n := n - 1;
+			CALL fac;
+			f := f * x;
+		END
+	ELSE
+		BEGIN
+			f := 1;
+			(* DEBUG; *)
+		END;
+END;
+
+BEGIN
+	i := 0;
+	WHILE i <= 10 DO BEGIN
+		n := i;
+		f := 0;
+		CALL fac;
+		!f;
+		i := i + 1;
+	END;	
+END.

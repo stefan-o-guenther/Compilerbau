@@ -1,0 +1,35 @@
+(* f und g lokal zu main *)
+VAR a, d;
+	PROCEDURE g;
+	VAR c, d;
+	BEGIN
+		a := 12;
+		c := 32;
+		d := 42;
+		DEBUG; (* Hauptspeicherausgabe *)
+		!a;
+		!c;
+		!d;
+	END;
+
+	PROCEDURE f;
+	VAR b, d;
+	BEGIN
+		a := 11;
+		b := 21;
+		d := 41;
+		DEBUG; (* Hauptspeicherausgabe *)
+		CALL g;
+		!a;
+		!b;
+		!d;
+	END;
+
+BEGIN
+	a := 10;
+	d := 40;
+	DEBUG; (* Hauptspeicherausgabe *)
+	CALL f;
+	!a;
+	!d;
+END.

@@ -1,0 +1,19 @@
+(*                  *)
+VAR a;
+
+	PROCEDURE f;
+	
+	BEGIN
+		a := a + 1;
+		IF a = 2 THEN
+			CALL f;
+		IF a > 2 THEN BEGIN
+			! a; (* Markierung *)
+			DEBUG;
+		END;
+	END;
+	
+BEGIN
+	a := 1;
+	CALL f;
+END.

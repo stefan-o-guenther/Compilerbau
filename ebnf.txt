@@ -1,0 +1,70 @@
+ 
+ program        =   block "." .
+ 
+ block          =   [ const ] [ var ] { procedure } [ statement ] .
+ 
+ const          =   "CONST" identifier "=" number { "," identifier "=" number } ";" .
+ 
+ var            =   "VAR" identifier { "," identifier } ";" .
+ 
+ procedure      =   "PROCEDURE" identifier ";" block ";" .
+ 
+ statement      =   assignment | call | read | write | beginend | ifthenelse | whiledo | repeatuntil | debug | fortodo | increment | decrement .    
+ 
+ assignment     =   identifier ( ":=" | "+=" | "-=" | "*=" | "/=" | "%=" ) ( expression | ternary ) .
+ 
+ call           =   "CALL" identifier .
+ 
+ read           =   "?" identifier .
+ 
+ write          =   "!" expression .
+ 
+ beginend       =   "BEGIN" statement { ";" statement } "END" .
+ 
+ ifthenelse     =   "IF" disjunction "THEN" statement [ "ELSE" statement ] .
+ 
+ whiledo        =   "WHILE" disjunction "DO" statement ] .
+ 
+ repeatuntil    =   "REPEAT" statement "UNTIL "disjunction" ] .
+ 
+ debug          =   "DEBUG" .
+ 
+ fortodo        =   "FOR" identifier ":=" number "TO" number "DO" statement .
+ 
+ increment      =   "INC" identifier .
+ 
+ decrement      =   "DEC" identifier .
+ 
+ disjunction    =   conjunction { "|" conjunction } .
+ 
+ conjunction    =   condition { "&" condition } .
+ 
+ condition      =   evenodd | comparison | negation | bracket .
+ 
+ evenodd        =   ( "ODD" | "EVEN" ) expression .
+ 
+ comparison     =   expression ( "=" | "#" | "<" | "<=" | ">" | ">=" | "!=" | "<>" ) expression .
+ 
+ negation       =   ( "!" | "NOT" ) condition .
+ 
+ bracket        =   "(" disjunction ")" .
+ 
+ expression     =   [ "+" | "-" ] term { ( "+" | "-" ) term } .
+ 
+ term           =   exponentiation { ( "*" | "/" | "%" ) exponentiation } .
+ 
+ exponentiation =   factor { ( "^" | "**" ) factor } .   
+ 
+ factor         =   identifier | number | "(" expression ")" .
+
+ ternary        =   "TERNARY" disjunction "?" expression ":" expression .
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

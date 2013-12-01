@@ -1,0 +1,39 @@
+(* g lokal zu f *)
+VAR a, d;
+
+	PROCEDURE f;
+	VAR b, d;
+
+		PROCEDURE g;
+		VAR c, d;
+		BEGIN
+			a := 12;
+			b := 22;
+			c := 32;
+			d := 42;
+			DEBUG; (* Hauptspeicherausgabe *)
+			!a;
+			!b;
+			!c;
+			!d;
+		END;
+
+	BEGIN
+		a := 11;
+		b := 21;
+		d := 41;
+		DEBUG; (* Hauptspeicherausgabe *)
+		CALL g;
+		!a;
+		!b;
+		!d;
+	END;
+
+BEGIN
+	a := 10;
+	d := 40;
+	PRINT 'Programmzeile 35:'; DEBUG; (* Hauptspeicherausgabe *)
+	CALL f;
+	!a;
+	!d;
+END.

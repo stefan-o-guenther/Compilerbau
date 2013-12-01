@@ -1,0 +1,15 @@
+VAR e, n, r, f;
+BEGIN
+	? e;
+	IF e > 0 THEN BEGIN
+		n := e;
+		WHILE n > 0 DO BEGIN
+			r := e / n;
+			IF r # 0 THEN BEGIN
+				f := n * r;
+				IF e = f THEN !r;
+			END;
+			n := n - 1;
+		END;
+	END;	
+END.

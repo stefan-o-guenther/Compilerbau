@@ -1,0 +1,9 @@
+PROGRAM Test;
+
+CONST a = 5, b = 2, c = 3;
+VAR x, y, z;
+BEGIN
+IF ((c!+3) > (a+2)) THEN !c!;
+x := a;
+!x;
+END.
